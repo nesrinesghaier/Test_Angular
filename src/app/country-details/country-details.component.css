@@ -1,0 +1,16 @@
+mat-card img{
+  object-fit: cover;
+  width: 30%;
+  height: 50%;
+}
+a.mat-menu-item > mat-icon {
+  margin-bottom: 14px;
+}
+.mat-icon svg {
+  height: 24px;
+  width: 24px;
+}
+.mat-list-item-content{
+  padding-left: 5px;
+  padding-right: 5px;
+}

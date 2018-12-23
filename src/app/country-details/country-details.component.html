@@ -1,0 +1,161 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"
+      xmlns="http://www.w3.org/1999/html">
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{country.name}}</mat-card-title>
+    <mat-card-subtitle style="overflow-x: auto;">
+
+      <i class="material-icons" style="font-size: 15px">pin_drop</i> Capital : {{country.capital}}
+    </mat-card-subtitle>
+
+  </mat-card-header>
+
+  <mat-card-content style="display:flex;justify-content:center;align-items:center;">
+    <img mat-card-image src="{{country.flag}}">
+
+  </mat-card-content>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngIf="country.topLevelDomain.length!=0">
+        <h3>Top Level Domains: </h3>
+        {{country.topLevelDomain.join((', '))}}
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngIf="country.alpha3Code!==''">
+        <h3>Alpha 2 Code: </h3> {{country.alpha2Code}}
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngIf="country.alpha2Code!==''">
+        <h3>Alpha 3 Code: </h3> {{country.alpha3Code}}
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngIf="country.callingCodes.length!=0">
+        <h3>Calling Codes: </h3>
+        {{country.callingCodes.join((', '))}}
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngIf="country.altSpellings.length!=0">
+        <h3>Alternative Spellings: </h3>
+        {{country.altSpellings.join((', '))}}
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <h3>Region: </h3> {{country.region}}
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <h3>Subregion : </h3> {{country.subregion}}
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <h3>Population: </h3> {{country.population}}
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <h3>Coordinates: </h3>
+        <span> Latitude: {{country.latlng[0]}},
+          Longitude: {{country.latlng[1]}}</span>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <h3>Demonym: </h3> {{country.demonym}}
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <h3>Area: </h3> {{country.area}}
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngIf="country.gini!=null">
+        <h3>Gini: </h3> {{country.gini}}
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngIf="country.altSpellings.length!=0">
+        <h3>Timezones: </h3>
+        {{country.altSpellings.join((', '))}}
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngIf="country.borders.length!=0">
+        <h3>Borders: </h3>
+        {{country.borders.join((', '))}}
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngIf="country.numericCode!=null">
+        <h3>Numeric Code: </h3> {{country.numericCode}}
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list class="app-class">
+        <mat-list-item>
+          <h3 matInput rows="7">Currencies</h3>
+        </mat-list-item>
+        <mat-list style="margin-left:30px;">
+          <div *ngFor="let item of country.currencies">
+            <mat-list-item><h4 *ngIf="item.code!=='(none)'">Code: </h4>{{item.code != '(none)' ? item.code : '' }}
+              <h4 *ngIf="item.name!==null"> , Name:</h4> {{item.name}}
+              <h4 *ngIf="item.symbol!==null"> , Symbol:</h4> {{item.symbol}}
+            </mat-list-item>
+          </div>
+        </mat-list>
+      </mat-list>
+      <mat-divider></mat-divider>
+      <mat-list class="app-class">
+        <mat-list-item>
+          <h3 matInput rows="7">Languages</h3>
+        </mat-list-item>
+        <mat-list style="margin-left:30px;">
+          <div *ngFor="let item of country.languages">
+            <mat-list-item>
+              <h4 *ngIf="item.iso639_1!==''"> Iso639_1: </h4>{{item.iso639_1 != '' ? item.iso639_1 : '' }}
+              <h4 *ngIf="item.iso639_2!==''"> , Iso639_2: </h4>{{item.iso639_2 != '' ? item.iso639_2 : '' }}
+              <h4 *ngIf="item.name!==null"> , Name: </h4> {{item.name}}
+              <h4 *ngIf="item.nativeName!==null"> , Native Name: </h4> {{item.nativeName}}
+            </mat-list-item>
+          </div>
+        </mat-list>
+      </mat-list>
+      <mat-divider></mat-divider>
+      <mat-accordion style="margin-left:-20px;">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title> Translations</mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list style="margin-left:30px;">
+            <mat-list-item> de: {{country.translations['de']}}</mat-list-item>
+            <mat-list-item> es: {{country.translations['es']}}</mat-list-item>
+            <mat-list-item> fr: {{country.translations['fr']}}</mat-list-item>
+            <mat-list-item> ja: {{country.translations['ja']}}</mat-list-item>
+            <mat-list-item> it: {{country.translations['it']}}</mat-list-item>
+            <mat-list-item> br: {{country.translations['br']}}</mat-list-item>
+            <mat-list-item> pt: {{country.translations['pt']}}</mat-list-item>
+            <mat-list-item> nl: {{country.translations['nl']}} </mat-list-item>
+            <mat-list-item> hr: {{country.translations['hr']}}</mat-list-item>
+            <mat-list-item> fa: {{country.translations['fa']}}</mat-list-item>
+          </mat-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-divider *ngIf="country.regionalBlocs.length!=0"></mat-divider>
+      <mat-accordion *ngIf="country.regionalBlocs.length!=0" >
+        <mat-expansion-panel  style="margin-top: 15px">
+          <mat-expansion-panel-header>
+            <mat-panel-title>Regional Blocs</mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list style="margin-left:30px;">
+            <div *ngFor="let bloc of country.regionalBlocs">
+              <ul>
+                <li>Acronym: {{bloc.acronym != '' ? bloc.acronym : '' }}</li>
+                <li>Name: {{bloc.name}}</li>
+                <li *ngIf="bloc.otherAcronyms.length!==0">Other Acronyms: {{bloc.otherAcronyms.join(' ,')}}</li>
+                <li *ngIf="bloc.otherNames.length!==0">Other Names: {{bloc.otherNames.join(' ,')}}</li>
+              </ul>
+            </div>
+          </mat-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <br>
+      <mat-divider *ngIf="country.cioc!==''"></mat-divider>
+      <mat-list-item *ngIf="country.cioc!==''">
+        <h3>Cioc: </h3> {{country.cioc}}
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
