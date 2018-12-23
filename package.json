@@ -25,6 +25,7 @@
     "@mdi/angular-material": "^3.2.89",
     "@mdi/font": "^3.2.89",
     "angular-split": "^2.0.1",
+    "bootstrap": "^4.2.1",
     "core-js": "^2.5.4",
     "hammerjs": "^2.0.8",
     "rxjs": "~6.3.3",

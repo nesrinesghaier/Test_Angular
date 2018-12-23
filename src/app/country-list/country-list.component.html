@@ -1,8 +1,8 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.1/angular-material-icons.min.js"></script>
 
-<mat-card [style.overflow]="'auto'" [style.height.px]="'500'" style="height:100%;width: 25%;display: inline-block;margin-top: 5px">
+<mat-card class="card" fxFlex="33%" [style.overflow]="'auto'" [style.height.px]="'500'" style="height:100%;display: inline-block;margin-top: 5px" >
   <mat-toolbar>
-    <span style="flex: 1 1 auto;margin: 0 auto;text-align: center;">Country List</span>
+    <span style="flex: 1 1 auto;margin: 0 auto;text-align: center;">Countries List</span>
   </mat-toolbar>
   <div class="basic-container">
       <mat-form-field class="example-full-width">
@@ -11,10 +11,10 @@
     <mat-nav-list>
 
       <mat-list-item (click)="currentItem=c;favorite=true" *ngFor="let c of countries | filter:term">
-        <div mat-line>
+        <div fxFlex="70%" mat-line>
           {{ c.name}}
         </div>
-        <p mat-line>
+        <p style="margin-top: 5px" fxFlex="70%"  mat-line>
           {{ c.capital}}
         </p>
         <mat-icon *ngIf="!c.favorite" (click)="addToFavorites(c)">favorite_border</mat-icon>
@@ -24,7 +24,7 @@
   </div>
 </mat-card>
 
-<mat-card style="display: inline-block;float: right;width: 69%;margin-top: 5px;margin-left: 3px">
+<mat-card fxFlex="67%" style="display: inline-block;float: right;margin-top: 5px;margin-left: 3px">
   <mat-toolbar>
     <span style="flex: 1 1 auto;margin: 0 auto;text-align: center;">Details</span>
   </mat-toolbar>
