@@ -23,10 +23,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "src/theme.scss",
-              "src/palette.css"
-
+              {
+                "input": "src/custom-theme.scss"
+              },
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -82,7 +82,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css",
+              "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap-reboot.css",
               "node_modules/bootstrap/dist/css/bootstrap-grid.css"
             ],

@@ -1,20 +1,23 @@
 .mat-card.scrollable-content {
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-color: #8BC34A}
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    color: #8BC34A
+}
 
 .mat-card-title-group {
-  display: block;
+    display: block;
 }
 
 .mat-card-content {
-  overflow-y: auto;
+    overflow-y: auto;
 }
+
 .app-class .mat-list-item {
-  height: auto;
+    height: auto;
 }
+
 .example-full-width {
-  width: 100%;
+    width: 100%;
 }
 

@@ -14,6 +14,7 @@ import {CountryDetailsComponent} from './country-details/country-details.compone
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {HttpClientModule} from '@angular/common/http';
 import {FilterPipe} from './filter/filter.pipe';
+import {OverlayContainer} from '@angular/cdk/overlay';
 
 @NgModule({
     declarations: [
@@ -37,7 +38,8 @@ import {FilterPipe} from './filter/filter.pipe';
     bootstrap: [AppComponent]
 })
 export class AppModule {
-    constructor(matIconRegistry: MatIconRegistry, domSanitizer: DomSanitizer) {
+    constructor(matIconRegistry: MatIconRegistry, domSanitizer: DomSanitizer, overlayContainer: OverlayContainer) {
         matIconRegistry.addSvgIconSet(domSanitizer.bypassSecurityTrustResourceUrl('./assets/mdi.svg'));
+        overlayContainer.getContainerElement().classList.add('alternate-theme');
     }
 }
