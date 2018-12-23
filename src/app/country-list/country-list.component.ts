@@ -4,11 +4,13 @@ import {DataService} from "../service/data.service";
 import {Observable} from "rxjs";
 import { CollectionViewer, DataSource } from '@angular/cdk/collections';
 import { BehaviorSubject, Subscription } from 'rxjs';
+import {FilterPipe} from "../filter/filter.pipe";
 
 @Component({
   selector: 'app-country-list',
   templateUrl: './country-list.component.html',
   styleUrls: ['./country-list.component.css'],
+
 })
 export class CountryListComponent implements OnInit {
   public data: any[] = [];
@@ -21,7 +23,6 @@ export class CountryListComponent implements OnInit {
     this.service.getConfigResponse().subscribe(
       (res: Country[]) => {
         this.countries = res,
-          console.log(this.countries),
           error => console.log(error)
       });
   }

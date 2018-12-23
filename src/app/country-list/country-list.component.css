@@ -13,3 +13,6 @@
 .app-class .mat-list-item {
   height: auto;
 }
+.example-full-width {
+  width: 100%;
+}

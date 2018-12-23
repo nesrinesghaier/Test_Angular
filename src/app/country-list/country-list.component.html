@@ -5,9 +5,12 @@
     <span style="flex: 1 1 auto;margin: 0 auto;text-align: center;">Country List</span>
   </mat-toolbar>
   <div class="basic-container">
+      <mat-form-field class="example-full-width">
+        <input [(ngModel)]="term" matInput placeholder="Search country by name">
+      </mat-form-field>
     <mat-nav-list>
 
-      <mat-list-item (click)="currentItem=c;favorite=true" *ngFor="let c of countries">
+      <mat-list-item (click)="currentItem=c;favorite=true" *ngFor="let c of countries | filter:term">
         <div mat-line>
           {{ c.name}}
         </div>
