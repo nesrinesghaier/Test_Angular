@@ -1,8 +1,8 @@
 <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.1/angular-material-icons.min.js"></script>
-<div class="row">
+<div class="row primary container-fluid">
     <div class="col-md-4">
-        <mat-card [style.overflow]="'auto'" [style.height.px]="'500'">
-            <mat-toolbar>
+        <mat-card [style.overflow]="'auto'" [style.height.px]="'585'">
+            <mat-toolbar class="primary">
                 <span style="flex: 1 1 auto;margin: 0 auto;text-align: center;">Countries List</span>
             </mat-toolbar>
             <div class="basic-container">
@@ -11,26 +11,33 @@
                 </mat-form-field>
                 <mat-nav-list>
 
-                    <mat-list-item (click)="currentItem=c;favorite=true" *ngFor="let c of countries | filter:term">
+                    <mat-list-item (click)="currentItem=c;favorite=true;show=false"
+                                   *ngFor="let c of countries | filter:term">
                         <div mat-line>
                             {{ c.name}}
                         </div>
-                        <p style="margin-top: 5px" fxFlex="70%" mat-line>
+                        <p style="margin-top: 5px" mat-line>
                             {{ c.capital}}
                         </p>
                         <mat-icon *ngIf="!c.favorite" (click)="addToFavorites(c)">favorite_border</mat-icon>
                         <mat-icon *ngIf="c.favorite" (click)="addToFavorites(c)">favorite</mat-icon>
                     </mat-list-item>
+
                 </mat-nav-list>
             </div>
         </mat-card>
     </div>
     <div class="col-md-8">
         <mat-card>
-                <mat-toolbar>
-                    <span style="flex: 1 1 auto;margin: 0 auto;text-align: center;">Details</span>
-                </mat-toolbar>
-            <mat-card-content class="mt-md-2">
+            <mat-toolbar class="primary">
+                <span style="flex: 1 1 auto;margin: 0 auto;text-align: center;">Details</span>
+            </mat-toolbar>
+            <div *ngIf="show">
+                <mat-card-content class="container"><img mat-card-image src="./../assets/countries.jpg" alt=""></mat-card-content>
+
+            </div>
+
+            <mat-card-content>
                 <app-country-details *ngIf="favorite"
                                      [country]=currentItem>
                 </app-country-details>

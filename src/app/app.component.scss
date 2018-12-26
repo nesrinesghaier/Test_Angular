@@ -3,14 +3,23 @@ mat-sidenav-container, mat-sidenav-content, mat-sidenav {
   height: 100%;
 }
 
-mat-sidenav {
-  width: 250px;
+@import "~src/theme_variables.scss";
+
+.primary {
+  background-color: $primary;
+  color: $primary-contrast;
+  background-size: contain;
 }
 
+.second {
+  background-color: $second;
+  color: $second;
+
+}
 
 a:hover,
 a:active {
-  color: #8BC34A;
+  color: #BDBDBD;
 }
 
 .navigation-items {
@@ -35,12 +44,4 @@ a:active {
   line-height: 30px;
   margin: 0;
   width: 85%;
-}
-@media screen and (min-width: 360px) {
-  .h4 {
-    font-size: 15px;
-  }
-  .h3{
-    font-size: 20px;
-  }
 }

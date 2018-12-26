@@ -1,13 +1,19 @@
 import {Component, OnInit} from '@angular/core';
+
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'AngularTest';
+    title = 'AngularTest';
+    hide: boolean;
 
-  ngOnInit(): void {
+    ngOnInit(): void {
+        this.hide = false;
+    }
 
-  }
+    hideImg() {
+        this.hide = true;
+    }
 }

@@ -9,7 +9,7 @@ import {FilterPipe} from '../filter/filter.pipe';
 @Component({
     selector: 'app-country-list',
     templateUrl: './country-list.component.html',
-    styleUrls: ['./country-list.component.css'],
+    styleUrls: ['./country-list.component.scss'],
 
 })
 export class CountryListComponent implements OnInit {
@@ -17,6 +17,7 @@ export class CountryListComponent implements OnInit {
     public countries: Country[] = [];
     public currentItem: Country;
     private favorite = false;
+    private show = true;
 
     constructor(private service: DataService) {
 
@@ -28,15 +29,17 @@ export class CountryListComponent implements OnInit {
     }
 
 
-    //private countries : Observable<any[]> ;
-
     ngOnInit() {
-        //alert(typeof this.countries[0].);
     }
 
 
     addToFavorites(item) {
         console.log(item);
         item.favorite = !item.favorite;
+    }
+
+    showCountry(c: Country) {
+        this.currentItem = c;
+        this.show = false;
     }
 }

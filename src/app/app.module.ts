@@ -11,10 +11,16 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {CountryListComponent} from './country-list/country-list.component';
 import {CountryDetailsComponent} from './country-details/country-details.component';
-import {FlexLayoutModule} from '@angular/flex-layout';
 import {HttpClientModule} from '@angular/common/http';
 import {FilterPipe} from './filter/filter.pipe';
 import {OverlayContainer} from '@angular/cdk/overlay';
+
+
+import {
+    CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, CovalentExpansionPanelModule,
+    CovalentStepsModule, CovalentLoadingModule, CovalentDialogsModule, CovalentSearchModule, CovalentPagingModule,
+    CovalentNotificationsModule, CovalentMenuModule, CovalentDataTableModule, CovalentMessageModule
+} from '@covalent/core';
 
 @NgModule({
     declarations: [
@@ -29,10 +35,22 @@ import {OverlayContainer} from '@angular/cdk/overlay';
         AppRoutingModule,
         BrowserAnimationsModule,
         MaterialModule,
-        FlexLayoutModule,
         HttpClientModule,
         MatIconModule,
         ScrollingModule,
+        CovalentCommonModule,
+        CovalentLayoutModule,
+        CovalentMediaModule,
+        CovalentExpansionPanelModule,
+        CovalentStepsModule,
+        CovalentLoadingModule,
+        CovalentDialogsModule,
+        CovalentSearchModule,
+        CovalentPagingModule,
+        CovalentNotificationsModule,
+        CovalentMenuModule,
+        CovalentDataTableModule,
+        CovalentMessageModule
     ],
     providers: [],
     bootstrap: [AppComponent]
