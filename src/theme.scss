@@ -1,4 +1,7 @@
 @import '~@angular/material/theming';
 @import "theme_variables.scss";
+@import '~bootstrap/scss/bootstrap';
+
+@import "styles";
 @include mat-core();
 @include angular-material-theme($app-theme);
