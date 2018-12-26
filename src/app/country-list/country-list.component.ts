@@ -34,7 +34,6 @@ export class CountryListComponent implements OnInit {
 
 
     addToFavorites(item) {
-        console.log(item);
         item.favorite = !item.favorite;
     }
 
