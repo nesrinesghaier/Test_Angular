@@ -5,6 +5,7 @@ import {Observable} from 'rxjs';
 import {CollectionViewer, DataSource} from '@angular/cdk/collections';
 import {BehaviorSubject, Subscription} from 'rxjs';
 import {FilterPipe} from '../filter/filter.pipe';
+import {forEach} from '@angular/router/src/utils/collection';
 
 @Component({
     selector: 'app-country-list',
@@ -23,11 +24,14 @@ export class CountryListComponent implements OnInit {
 
         this.service.getConfigResponse().subscribe(
             (res: Country[]) => {
-                this.countries = res,
-                    error => console.log(error);
+                res.forEach((value, index) => {
+                        if (value.region.includes('Europe')) {
+                            this.countries.push(value);
+                        }
+                });
+                console.log(this.countries.length);
             });
     }
-
 
     ngOnInit() {
     }
